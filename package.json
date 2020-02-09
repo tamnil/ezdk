@@ -24,5 +24,8 @@
   "homepage": "https://github.com/tamnil/ezdk#readme",
   "bin": {
     "faker-br": "cli.js"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }
