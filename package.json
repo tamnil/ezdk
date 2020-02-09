@@ -1,0 +1,25 @@
+{
+  "name": "ezdk",
+  "version": "0.0.0",
+  "description": "Easy docker/docker-compose commands and abbreviation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamnil/ezdk.git"
+  },
+  "keywords": [
+    "ezdk",
+    "docker",
+    "docker-compose",
+    "abberviation"
+  ],
+  "author": "Tamnil Saito junior",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamnil/ezdk/issues"
+  },
+  "homepage": "https://github.com/tamnil/ezdk#readme"
+}
