@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/tamnil/ezdk/issues"
   },
-  "homepage": "https://github.com/tamnil/ezdk#readme"
+  "homepage": "https://github.com/tamnil/ezdk#readme",
+  "bin": {
+    "faker-br": "cli.js"
+  }
 }
