@@ -24,9 +24,15 @@
   "homepage": "https://github.com/tamnil/ezdk#readme",
   "bin": {
     "dk": "./cli/dk-cli.js",
-    "dkc": "./cli/dkc-cli.js"
+    "dkc": "./cli/dkc-cli.js",
+    "ezdk": "./cli/dk-cli.js",
+    "ezdkc": "./cli/dkc-cli.js"
   },
   "devDependencies": {
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "csv-parse": "^4.8.5"
   }
 }

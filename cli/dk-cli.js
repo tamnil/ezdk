@@ -13,7 +13,7 @@ const evaltest = eval
 const onlyArgsIn = argvIn.slice(2)
 
 
-let mySpawn = spawn('docker',['ps'])
+let mySpawn = execSync('docker',['ps'])
 
 
 mySpawn.stdout.on( 'data', data => {
@@ -21,7 +21,7 @@ mySpawn.stdout.on( 'data', data => {
 } );
 
 mySpawn.stderr.on( 'data', data => {
-    console.log( `stderr: ${data}` );
+    // console.log( `stderr: ${data}` );
 } );
 
 mySpawn.on( 'close', code => {
