@@ -22,22 +22,20 @@ const regexDk = /dk$|dk-cli.js$/,
 const commandType = command => {
     const retVal = false;
     if (command.match(regexDk)) {
-        return {type:"dk",cmd:"docker"};
+        return { type: "dk", cmd: "docker" };
     } else if (command.match(regexDkc)) {
-        return {type:"dkc",cmd:"docker-compose"};
+        return { type: "dkc", cmd: "docker-compose" };
     }
-        return {type:"dk",cmd:"docker"};
+    return { type: "dk", cmd: "docker" };
 };
 
 const onlyArgsIn = argvIn.slice(2),
-
-onlyArgsOut = onlyArgsIn.join(" ");
+    onlyArgsOut = onlyArgsIn.join(" ");
 
 const cli = () => {
     let command = commandType(absoluteFileName);
     let overrides = Object.keys(dict[command.type]);
 
-    console.log(overrides)
     let operation = overrides.find(key => key === mainArg);
     if (operation) {
         let retCommand = dict[command][mainArg];
@@ -48,20 +46,16 @@ const cli = () => {
             .catch(err => {
                 console.log("error", err);
             });
-    }else{
-
+    } else {
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
                 console.log(res);
             })
             .catch(err => {
-                console.log( err.stderr);
+                console.log(err.stderr);
             });
-
     }
-
 };
-console.log('here')
 
 module.exports = {
     cli
