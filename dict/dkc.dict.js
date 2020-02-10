@@ -4,17 +4,18 @@
  *  `<shortcutName>`: { out: `<command>`, desc: `<description ` },
  *
  */
-const dkc = arg => ({
+const dkc = {
     ub: {
-        out: `docker-compose up --build`,
-        descr: `docker-compose up build`
+        out: "docker-compose up --build",
+        descr: "docker-compose up build"
     },
     u: {
-        out: `docker-compose up --build`,
-        descr: `docker-compose up build`
+        out: "docker-compose up --build",
+        descr: "docker-compose up build"
     }
-    // ``: { out: ``, desc: ` ` },
-    // ``: { out: ``, desc: ` ` },
-});
+    // "": { out: "", desc: " " },
+    // "": { out: "", desc: " " },
+    // "": { out: "", desc: " " },
+};
 
 module.exports = dkc;
