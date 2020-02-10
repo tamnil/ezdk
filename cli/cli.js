@@ -47,7 +47,7 @@ const cli = () => {
                 }
             })
             .catch(err => {
-                console.log("error", err);
+                console.log("error", err.stderr);
             });
     } else {
         // console.log("normal", onlyArgsOut);

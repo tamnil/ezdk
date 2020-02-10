@@ -1,3 +1,3 @@
 #! /bin/bash
-git add . && git commit -m 'sync' && git push && npm version patch && npm publish && sleep 3 && npm install -g ezdk
+git add . && git commit -m 'sync' && git push && npm version patch && git push && npm publish && sleep 5 && npm install -g ezdk
 
