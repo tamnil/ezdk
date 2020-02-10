@@ -1,27 +1,26 @@
 #!/usr/bin/env node
 /*
  *   Tamnil Saito Junior <tamnil@gmail.com> 2020
-*
-*
-*
-*/
-
+ *
+ *
+ *
+ */
+const util = require("util");
 const { execSync, exec, spawn } = require("child_process");
 const execPrommised = util.promisify(require("child_process").exec);
+const dict = require("../dict");
 
-const {execSync,spawn} = require('child_process');
+const argvIn = process.argv;
+const evaltest = eval;
+const onlyArgsIn = argvIn.slice(2);
 
-const argvIn = process.argv
-const evaltest = eval
-const onlyArgsIn = argvIn.slice(2)
+const onlyArgsOut = onlyArgsIn.join("");
 
-     const execPrommised('docker ps').then((a,b) => {
 
-console.log(a,b)
-     }
-
-     )
-
+console.log(argvIn);
+execPrommised("docker ps").then(res => {
+    console.log(res);
+});
 
 // let mySpawn = spawn('docker',['ps'])
 //
@@ -38,6 +37,4 @@ console.log(a,b)
 //     console.log( `child process exited with code ${code}` );
 // } );
 
-
-
-console.log(onlyArgsIn)
+console.log(onlyArgsIn);

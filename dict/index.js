@@ -1,9 +1,10 @@
-
-const  dk = {
-        in: "rmia",
-        out: "docker rmi $(docker ps -a -q)"
+const dk = {
+        rmia: {
+            out: "docker rmi $(docker ps -a -q)",
+            desc: ""
+        }
     },
- dkc =  {
+    dkc = {
         ub: {
             out: "docker-compose up --build",
             descr: "docker-compose up build"
@@ -12,9 +13,9 @@ const  dk = {
             out: "docker-compose up --build",
             descr: "docker-compose up build"
         }
-    }
+    };
 
 module.exports = {
-dk,
-dkc
-}
+    dk,
+    dkc
+};
