@@ -20,14 +20,10 @@ const regexDk = /dk$|dk-cli.js$/,
 const onlyArgsIn = argvIn.slice(2),
     onlyArgsOut = onlyArgsIn.join(" ");
 
-const commandType = command => {
-    if (command.match(regexDk)) {
-        return { type: "dk", cmd: "docker" };
-    } else if (command.match(regexDkc)) {
-        return { type: "dkc", cmd: "docker-compose" };
-    }
-    return { type: "dk", cmd: "docker" };
-};
+const commandType = cmd =>
+    cmd.match(regexDkc)
+        ? { type: "dkc", cmd: "docker-compose" }
+        : { type: "dk", cmd: "docker" };
 
 const formatConsoleOut = type => data => console.log(data.toString()),
     finishProcess = type => code => process.exit(code);
@@ -50,16 +46,11 @@ const cli = () => {
     let overrides = Object.keys(dict[command.type]);
 
     // spawn beg
-    let operation = overrides.find(key => key === mainArg);
+    let operation = overrides.find(key => key === mainArg),
+        overrideCmd = dict[command.type][mainArg],
+        rawCmd = `${command.cmd} ${onlyArgsOut}`;
 
-    if (operation) {
-        console.log("override");
-        let retCommand = dict[command.type][mainArg];
-        mySpawn(retCommand.out);
-    } else {
-        console.log("native");
-        mySpawn(`${command.cmd} ${onlyArgsOut}`);
-    }
+    mySpawn(operation ? overrideCmd.out : rawCmd);
 };
 
 module.exports = {
