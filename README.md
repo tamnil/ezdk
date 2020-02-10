@@ -5,22 +5,6 @@ Tamnil Saito Junior <tamnil@gmail.com>
 
 Common commands with less typing , by abberviation docker and docker-compose commands
 
-## Examples
-
-### Docker
-```
-removes all images:
-dk rmia 
-```
-
-### Docker-compose
-```
-Ddcker-compose up
-dkc u
-
-docker-compose up --build
-dkc ub
-```
 
 ## Requirements
 
@@ -32,6 +16,22 @@ from https://www.npmjs.com/package/ezdk
 ```
   npm install -g ezdk
 
+```
+## Examples
+
+### Docker
+```
+removes all images:
+dk rmia 
+```
+
+### Docker-compose
+```
+docker-compose up
+dkc u
+
+docker-compose up --build
+dkc ub
 ```
 
 
