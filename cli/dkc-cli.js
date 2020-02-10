@@ -6,6 +6,6 @@
  *
  */
 
-const {cli} = require('./cli')
+const { cli } = require("./cli");
 
-cli({type:'dkc',command:'docker-compose'})
+cli({ type: "dkc", command: "docker-compose" });
