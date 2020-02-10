@@ -1,6 +1,7 @@
 # DK ( EZDK ) Docker docker-compose  abbreviation
-Tamnil Saito Junior <tamnil@gmail.com>
 [![Build Status](https://travis-ci.com/tamnil/ezdk.svg?branch=master)](https://travis-ci.com/tamnil/ezdk)
+
+Tamnil Saito Junior <tamnil@gmail.com>
 
 Common commands with less typing , by abberviation docker and docker-compose commands
 
