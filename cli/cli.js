@@ -37,6 +37,7 @@ const cli = () => {
     let overrides = Object.keys(dict[command.type]);
 
     let operation = overrides.find(key => key === mainArg);
+    console.log(operation, 'operation')
     if (operation) {
         let retCommand = dict[command][mainArg];
         execPrommised(retCommand.out)
