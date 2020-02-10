@@ -1,6 +1,6 @@
 {
   "name": "ezdk",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Easy docker/docker-compose commands and abbreviation",
   "main": "index.js",
   "scripts": {
