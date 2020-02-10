@@ -32,6 +32,7 @@ const commandType = command => {
 const onlyArgsIn = argvIn.slice(2),
     onlyArgsOut = onlyArgsIn.join(" ");
 
+
 const cli = () => {
     let command = commandType(absoluteFileName);
     let overrides = Object.keys(dict[command.type]);
