@@ -54,7 +54,7 @@ const cli = () => {
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
                 if (res.stderr) {
-                    console.log(res.stderr, "res norma");
+                    console.log(res.stderr.toString());
                 } else {
                     console.log(res.stdout,'err norm');
                 }
