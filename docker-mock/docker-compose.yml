@@ -5,11 +5,12 @@ services:
       context: ./docker/node
       dockerfile: Dockerfile
     ports:
-      - "833:833"
+      - "8880:8880"
       # - "9000:9000"
       # - "443:443"
     volumes:
-      - ./app:/var/www/html
+      - ./app:/var/www/app
+    command: npm start
     # links:
       # - app
     # restart: always
