@@ -41,7 +41,7 @@ const cli = () => {
         let retCommand = dict[command][mainArg];
         execPrommised(retCommand.out)
             .then(res => {
-                console.log(res);
+                console.log(res,'res');
             })
             .catch(err => {
                 console.log("error", err);
@@ -49,10 +49,10 @@ const cli = () => {
     } else {
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
-                console.log(res);
+                console.log(res,'res');
             })
             .catch(err => {
-                console.log(err.stderr);
+                console.log(err.stderr,'err');
             });
     }
 };
