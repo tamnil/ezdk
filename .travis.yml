@@ -22,8 +22,7 @@ script:
   - "ls -lah"
   - "cd docker-mock && docker-compose up"
   - "ls -lah"
-
-  - "docker-compose "
   - "npm install -g ezdk"
   - "dk"
+  - "dkc"
   # - 'if [ "$(node -v)" = "v0.10.36" ]; then spacejam test-packages --mongo-url=dummy ./; fi'
