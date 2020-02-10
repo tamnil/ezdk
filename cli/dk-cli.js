@@ -7,4 +7,5 @@
  */
 
 const {cli} = require('./cli')
+cli({type:'dk',command:'docker'})
 

@@ -9,4 +9,3 @@
 const {cli} = require('./cli')
 
 cli({type:'dkc',command:'docker-compose'})
-// console.log(myCli())

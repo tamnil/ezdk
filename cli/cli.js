@@ -37,6 +37,7 @@ const cli = () => {
     let command = commandType(absoluteFileName);
     let overrides = Object.keys(dict[command.type]);
 
+    console.log(overrides)
     let operation = overrides.find(key => key === mainArg);
     if (operation) {
         let retCommand = dict[command][mainArg];
@@ -60,6 +61,7 @@ const cli = () => {
     }
 
 };
+console.log('here')
 
 module.exports = {
     cli
