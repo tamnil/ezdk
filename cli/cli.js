@@ -14,11 +14,13 @@ const argvIn = process.argv,
     absoluteFileName = argvIn[1],
     mainArg = argvIn[2];
 
-const regexDk = /dk$|dk-cli.js$/,
-    regexDkc = /dkc$|dkc-cli.js$/;
+     const regex = {
+     dk : /dk$|dk-cli.js$/,
+    dkc : /dkc$|dkc-cli.js$/
+     }
 
 const commandType = cmd =>
-    cmd.match(regexDkc)
+    cmd.match(regex.dkc)
         ? { type: "dkc", cmd: "docker-compose" }
         : { type: "dk", cmd: "docker" };
 
