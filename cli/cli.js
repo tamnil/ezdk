@@ -40,6 +40,7 @@ const cli = () => {
         let retCommand = dict[command.type][mainArg];
         execPrommised(retCommand.out)
             .then(res => {
+     console.log('res',res)
                 if (res.stderr) {
                     console.log(res.stderr.toString());
                 } else {
