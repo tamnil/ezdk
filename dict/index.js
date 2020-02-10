@@ -6,7 +6,8 @@ const dk = {
         psa: { out: "docker ps -a", desc: " " },
         spa: { out: "docker system prune -a ", desc: " " },
         rma: { out: "docker rm $(docker ps -a -q)", desc: " " },
-    "imp": { out: "docker image prune ", desc: " " },
+        impf: { out: "docker image prune -f", desc: " " },
+        impfa: { out: "docker image prune -f -a", desc: " " }
     // "": { out: "", desc: " " },
     // "": { out: "", desc: " " },
     },
