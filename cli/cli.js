@@ -42,9 +42,9 @@ const cli = () => {
         execPrommised(retCommand.out)
             .then(res => {
                 if (res.stderr) {
-                    console.log(res.stderr);
+                    console.log(res.stderr,'override err');
                 } else {
-                    console.log(res.stdout);
+                    console.log(res.stdout,'res overr');
                 }
             })
             .catch(err => {
@@ -54,13 +54,13 @@ const cli = () => {
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
                 if (res.stderr) {
-                    console.log(res.stderr, "res");
+                    console.log(res.stderr, "res norma");
                 } else {
-                    console.log(res.stdout);
+                    console.log(res.stdout,'err norm');
                 }
             })
             .catch(err => {
-                console.log(err.stderr, "err");
+                console.log(err.stderr, "err norm catched");
             });
     }
 };
