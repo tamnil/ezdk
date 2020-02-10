@@ -36,6 +36,7 @@ const cli = () => {
 
     let operation = overrides.find(key => key === mainArg);
     if (operation) {
+     console.log('override')
         let retCommand = dict[command.type][mainArg];
         execPrommised(retCommand.out)
             .then(res => {
@@ -49,6 +50,7 @@ const cli = () => {
                 console.log("error", err.stderr);
             });
     } else {
+     console.log('native')
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
                 if (res.stderr) {
