@@ -10,12 +10,15 @@ const { execSync, exec, spawn } = require("child_process");
 const execPrommised = util.promisify(require("child_process").exec);
 const dict = require("../dict");
 
-const argvIn = process.argv;
-const absoluteFileName = argvIn[1];
-const mainArg = argvIn[2];
+const argvIn = process.argv,
+    absoluteFileName = argvIn[1],
+    mainArg = argvIn[2];
 
 const regexDk = /dk$|dk-cli.js$/,
     regexDkc = /dkc$|dkc-cli.js$/;
+
+const onlyArgsIn = argvIn.slice(2),
+    onlyArgsOut = onlyArgsIn.join(" ");
 
 const commandType = command => {
     const retVal = false;
@@ -27,8 +30,6 @@ const commandType = command => {
     return { type: "dk", cmd: "docker" };
 };
 
-const onlyArgsIn = argvIn.slice(2),
-    onlyArgsOut = onlyArgsIn.join(" ");
 
 const cli = () => {
     let command = commandType(absoluteFileName);
@@ -36,11 +37,11 @@ const cli = () => {
 
     let operation = overrides.find(key => key === mainArg);
     if (operation) {
-     console.log('override')
+        console.log("override");
         let retCommand = dict[command.type][mainArg];
         execPrommised(retCommand.out)
             .then(res => {
-     console.log('res',res)
+                console.log("res", res);
                 if (res.stderr) {
                     console.log(res.stderr.toString());
                 } else {
@@ -51,7 +52,7 @@ const cli = () => {
                 console.log("error", err.stderr);
             });
     } else {
-     console.log('native')
+        console.log("native");
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
                 if (res.stderr) {
@@ -65,7 +66,6 @@ const cli = () => {
             });
     }
 };
-
 
 module.exports = {
     cli
