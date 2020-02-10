@@ -33,40 +33,29 @@ const commandType = command => {
 const cli = () => {
     let command = commandType(absoluteFileName);
     let overrides = Object.keys(dict[command.type]);
+    const formatConsoleOut = data => console.log(data.toString());
 
     // spawn beg
     const mySpawn = command => {
         const sp = spawn(command, [], { shell: true });
 
-        sp.stdout.on("data", data => {
-            console.log(data.toString());
-        });
-        sp.stderr.on("data", data => {
-            console.log(data.toString());
-        });
+        sp.stdout.on("data", formatConsoleOut);
+        sp.stderr.on("data", formatConsoleOut);
         process.stdin.on("data", data => {
-            console.log(data.toString());
-
             sp.stdin.write(data);
         });
         sp.on("disconnect", function(code) {
-            console.log("child process exited with code disconnect" + code);
             process.exit(code);
         });
         sp.on("error", function(code) {
-            console.log("erro: " + code, "ls", ls.stdout.toString());
             process.exit(code);
         });
 
-        // doesn't fire
         sp.on("exit", function(code) {
-            console.log("child process exited with code exit " + code);
             process.exit(code);
         });
 
-        // doesn't fire
         sp.on("data", function(code) {
-            console.log("data direct" + code);
             process.exit(code);
         });
     // spawn end
@@ -76,32 +65,9 @@ const cli = () => {
         console.log("override");
         let retCommand = dict[command.type][mainArg];
         mySpawn(retCommand.out);
-    // .then(res => {
-    //     console.log("res", res);
-    //     if (res.stderr) {
-    //         console.log(res.stderr.toString());
-    //     } else {
-    //         console.log(res.stdout.toString());
-    //     }
-    // })
-    // .catch(err => {
-    //     console.log("error", err.stderr);
-    // });
     } else {
         console.log("native");
-        mySpawn(`${command.cmd} ${onlyArgsOut}`)
-     // console.log('fasdf')
-        // mySpawn('docker image ')
-            // .then(res => {
-            //     if (res.stderr) {
-            //         console.log(res.stderr.toString());
-            //     } else {
-            //         console.log(res.stdout.toString());
-            //     }
-            // })
-            // .catch(err => {
-            //     console.log(err.stderr.toString());
-            // });
+        mySpawn(`${command.cmd} ${onlyArgsOut}`);
     }
 };
 
