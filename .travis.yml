@@ -24,4 +24,4 @@ script:
   - "ls -lah"
   - "npm install -g ezdk"
   - "dk"
-  - "dkc"
+  - "dkc help"
