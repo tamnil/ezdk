@@ -9,8 +9,13 @@ services:
       # - "9000:9000"
       # - "443:443"
     volumes:
-      - ./app:/var/www/app
-    command: npm start
+      - ./app:/app
+    command:
+      - /bin/bash
+      - -c
+      - |
+        cd /app && npm install && npm start
+
     # links:
       # - app
     # restart: always

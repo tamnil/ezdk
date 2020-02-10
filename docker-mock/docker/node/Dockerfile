@@ -1,4 +1,5 @@
 FROM node:12
+RUN apt update && apt install bash zip tmux
 
 RUN mkdir /app
 WORKDIR /app
