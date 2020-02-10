@@ -30,7 +30,6 @@ const commandType = command => {
 const onlyArgsIn = argvIn.slice(2),
     onlyArgsOut = onlyArgsIn.join(" ");
 
-
 const cli = () => {
     let command = commandType(absoluteFileName);
     let overrides = Object.keys(dict[command.type]);
@@ -41,16 +40,16 @@ const cli = () => {
         execPrommised(retCommand.out)
             .then(res => {
                 if (res.stderr) {
-                    console.log(res.stderr,'override err');
+                    console.log(res.stderr.toString());
                 } else {
-                    console.log(res.stdout,'res overr');
+                    console.log(res.stdout.toString);
                 }
             })
             .catch(err => {
                 console.log("error", err);
             });
     } else {
-        console.log('normal', onlyArgsOut)
+        console.log("normal", onlyArgsOut);
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
                 if (res.stderr) {
