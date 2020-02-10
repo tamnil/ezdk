@@ -19,6 +19,11 @@ from https://www.npmjs.com/package/ezdk
 ```
 ## Examples
 
+Aliases:
+  
+  * docker => dk
+  * docker-compose => dkc
+  
 ### Docker
 ```
 removes all images:
