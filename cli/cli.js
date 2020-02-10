@@ -51,16 +51,17 @@ const cli = () => {
                 console.log("error", err);
             });
     } else {
+        console.log('normal', onlyArgsOut)
         execPrommised(`${command.cmd} ${onlyArgsOut}`)
             .then(res => {
                 if (res.stderr) {
                     console.log(res.stderr.toString());
                 } else {
-                    console.log(res.stdout,'err n');
+                    console.log(res.stdout.toString());
                 }
             })
             .catch(err => {
-                console.log(err.stderr, "err norm catched");
+                console.log(err.stderr.toString());
             });
     }
 };
