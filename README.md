@@ -28,6 +28,10 @@ Aliases:
 ```
 removes all images:
 dk rmia 
+
+removes all containers:
+dk rma 
+
 ```
 
 ### Docker-compose
