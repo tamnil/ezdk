@@ -56,7 +56,7 @@ const cli = () => {
                 if (res.stderr) {
                     console.log(res.stderr.toString());
                 } else {
-                    console.log(res.stdout,'err norm');
+                    console.log(res.stdout,'err n');
                 }
             })
             .catch(err => {
