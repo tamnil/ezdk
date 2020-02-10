@@ -21,6 +21,8 @@ script:
   - "npm test"
   - "ls -lah"
   - "cd docker-mock && docker-compose up"
+  - "ls -lah"
+
   - "docker-compose "
   - "npm install -g ezdk"
   - "dk"
