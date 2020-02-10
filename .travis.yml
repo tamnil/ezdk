@@ -1,6 +1,8 @@
 # Run on new travis container (docker) based infrastructure
-sudo: false
+sudo: true
 language: node_js
+services:
+  - docker
 node_js:
   - "13"
   - "12"
@@ -17,4 +19,5 @@ before_install:
 
 script:
   - "npm test"
+  - "docker "
   # - 'if [ "$(node -v)" = "v0.10.36" ]; then spacejam test-packages --mongo-url=dummy ./; fi'
