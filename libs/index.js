@@ -1,5 +1,5 @@
 const util = require("util");
-const {formatter} = require('../lib')
+const {formatter} = require('../libs')
 const { execSync, exec, spawn } = require("child_process");
 const csvParsePromise = util.promisify(require("csv-parse"));
 const execPrommised = util.promisify(require("child_process").exec);

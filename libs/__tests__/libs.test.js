@@ -1,4 +1,4 @@
-const Utils = require("../utils.js");
+const Utils = require("../index");
 describe("utils test", () => {
     it("welcome to utils", async () => {
         console.log(await Utils.psAll());
