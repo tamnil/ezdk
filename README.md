@@ -39,4 +39,4 @@ dkc ub
 
 ## Compatibility
 
-  Not tested on windows "cmd" environment, only on POSIX systems
+  Not tested on windows "cmd" environment, only on POSIX systems, you can use WSDL ou cygwin to emulate the anvironment
