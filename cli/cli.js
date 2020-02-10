@@ -17,8 +17,6 @@ const mainArg = argvIn[2];
 const regexDk = /dk$|dk-cli.js$/,
     regexDkc = /dkc$|dkc-cli.js$/;
 
-// const programName = argvIn[1].
-//
 const commandType = command => {
     const retVal = false;
     if (command.match(regexDk)) {
@@ -38,7 +36,6 @@ const cli = () => {
     let overrides = Object.keys(dict[command.type]);
 
     let operation = overrides.find(key => key === mainArg);
-    console.log(operation, 'operation')
     if (operation) {
         let retCommand = dict[command.type][mainArg];
         execPrommised(retCommand.out)
