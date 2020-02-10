@@ -12,7 +12,9 @@ const formatTabular = text =>
         delimiter: ",",
         skip_lines_with_empty_values: true
     });
-// console.log(a)
+// docker ps parser
+
+
 const psAll = command =>
     new Promise((resolve, reject) =>
         exec("docker ps -a", async (err, stdout, stderr) => {
