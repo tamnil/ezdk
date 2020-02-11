@@ -1,10 +1,11 @@
-# DK ( EZDK ) Docker docker-compose  abbreviation
+# EZDK ( DK , DKC ) Docker docker-compose  abbreviation
 [![Build Status](https://travis-ci.com/tamnil/ezdk.svg?branch=master)](https://travis-ci.com/tamnil/ezdk)
 
-Tamnil Saito Junior <tamnil@gmail.com>
+Common commands with less typing , by abberviation  - docker and docker-compose commands.
 
-Common commands with less typing , by abberviation docker and docker-compose commands
+Useful for developers and remote/mobile access with limited level of input rate.
 
+If overrides is not found dk and dkc
 
 ## Requirements
 
@@ -42,14 +43,18 @@ dkc u
 docker-compose up --build
 dkc ub
 ```
+
 ## Dictionaries:
-### docker
+### dk (docker)
 https://github.com/tamnil/ezdk/blob/master/dict/dk.dict.js
 
-### docker-compose
+### dkc (docker-compose)
 https://github.com/tamnil/ezdk/blob/master/dict/dkc.dict.js
 
 
 ## Compatibility
 
   Not tested on windows "cmd" environment, only on POSIX systems, you can use WSDL ou cygwin to emulate the anvironment
+  
+## Author
+      Tamnil Saito Junior <tamnil@gmail.com>
