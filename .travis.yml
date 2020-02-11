@@ -19,9 +19,7 @@ before_install:
 
 script:
   - "npm test"
-  - "ls -lah"
   - "cd docker-mock && docker-compose up"
-  - "ls -lah"
   - "npm install -g ezdk"
   - "dk"
   - "dkc help"
