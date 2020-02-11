@@ -42,8 +42,12 @@ dkc u
 docker-compose up --build
 dkc ub
 ```
+## Dictionaries:
+### docker
+https://github.com/tamnil/ezdk/blob/master/dict/dk.dict.js
 
-
+### docker-compose
+https://github.com/tamnil/ezdk/blob/master/dict/dkc.dict.js
 
 
 ## Compatibility
