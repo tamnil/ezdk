@@ -5,11 +5,11 @@ services:
   - docker
 node_js:
   - "13"
-  # - "12"
+  - "12"
   # - "11"
-  # - "10"
+  - "10"
   # - "9"
-  # - "8"
+  - "8"
 
 before_install:
   # Install meteor and spacejam, a meteor command line package tester
