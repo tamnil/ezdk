@@ -5,19 +5,19 @@
  *
  *
  */
-const util = require("util"),
-    { execSync, exec, spawn } = require("child_process"),
-    execPrommised = util.promisify(require("child_process").exec),
+const lib = require("../libs");
+
+const { execSync, exec, spawn } = require("child_process"),
     dict = require("../dict");
 
 const argvIn = process.argv,
     absoluteFileName = argvIn[1],
     mainArg = argvIn[2];
 
-     const regex = {
-     dk : /dk$|dk-cli.js$/,
-    dkc : /dkc$|dkc-cli.js$/
-     }
+const regex = {
+    dk: /dk$|dk-cli.js$/,
+    dkc: /dkc$|dkc-cli.js$/
+};
 
 const commandType = cmd =>
     cmd.match(regex.dkc)
@@ -47,13 +47,12 @@ const spawnCommand = command => {
     });
 };
 
-
 const cli = () => {
     let operation = overrides.find(key => key === mainArg),
         overrideCmd = dict[command.type][mainArg],
         rawCmd = `${command.cmd} ${onlyArgsOut}`;
 
-    spawnCommand(operation ? overrideCmd.out : rawCmd);
+    return spawnCommand(operation ? overrideCmd.out : rawCmd);
 };
 
 module.exports = {
