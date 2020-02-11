@@ -30,7 +30,7 @@ describe("utils test", () => {
     it("welcome to utils", async () => {
         const res = await ps.psAll();
 
-        console.log(res[0]);
+        // console.log(res[0]);
         expect(true).toBe(true);
     });
 });
