@@ -19,18 +19,12 @@ const dk = {
     nls: { out: "docker network ls", desc: " " },
     nlsq: { out: "docker network ls --quiet", desc: " " },
     npf: { out: "docker network prune --force", desc: " " },
-    // not working:
-    //         nc: { out: "docker network connect", desc: " " },
-    // nd: { out: "docker network disconnect", desc: " " },
     np: { out: "docker network prune --force", desc: " " },
     imb: { out: "docker image build . ", desc: " " },
     bb: { out: "docker builder build . ", desc: " " },
     bp: { out: "docker builder prune -f", desc: " " },
     v: { out: "docker version", desc: " " },
     eit: { out: "docker exec -it ", desc: " " }
-
-    // "": { out: "", desc: " " },
-    // "": { out: "", desc: " " },
 };
 
 module.exports = dk;
